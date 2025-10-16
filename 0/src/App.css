@@ -1,0 +1,504 @@
+/* ====== ОБЩИЕ СТИЛИ ====== */
+body {
+  margin: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background-color: #fff0f5;
+  color: #2d2d2d;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+.app {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+/* ====== HEADER ====== */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8bbd0;
+  color: #4a0e2e;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.4);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ====== MENU BUTTON ====== */
+.menu-container {
+  position: relative;
+}
+
+.menu-button {
+  background: #d63384;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-button:hover {
+  background: #f06292;
+}
+
+
+
+/* ====== ВЫПАДАЮЩЕЕ МЕНЮ ====== */
+.nav-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff0f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 999;
+  animation: dropdownFade 0.3s ease;
+}
+
+.nav-dropdown a {
+  color: #4a0e2e;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown a:hover {
+  background: #f8bbd0;
+  color: #880e4f;
+}
+
+/* ====== ВСТУПЛЕНИЕ (HERO) ====== */
+.hero {
+  height: 100vh;
+  background: url("./assets/i.webp") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* затемнение поверх фото */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(43, 42, 42, 0.39);
+  z-index: 0;
+}
+
+/* текст */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+  animation: fadeInDown 1.2s ease;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease;
+}
+
+/* кнопка */
+.hero-btn {
+  background-color: #ffb6c1;
+  color: #111;
+  font-size: 1.2rem;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 2;
+  font-weight: 600;
+  transition: 0.3s ease;
+  animation: fadeInUp 2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #ff88a4;
+  transform: scale(1.05);
+}
+
+/* ====== СЕКЦИЯ ОБО МНЕ ====== */
+#about {
+  padding: 80px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  color: #ff66b3;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 700;
+  border: none;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 10px auto;
+  text-transform: uppercase;
+}
+
+/* ====== СЕКЦИИ ====== */
+.section {
+  background: #ffffff;
+  margin: 40px auto;
+  padding: 60px 30px;
+  max-width: 950px;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(255, 182, 193, 0.25);
+}
+
+.section h2 {
+  color: #880e4f;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  border-left: 6px solid #f48fb1;
+  padding-left: 12px;
+  text-align: left;
+}
+
+/* ====== ДОСТИЖЕНИЯ (ИКОНОЧКИ 3х2) ====== */
+.achievements {
+  text-align: center;
+}
+
+.achievements h2 {
+  color: #880e4f;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.achievements p {
+  font-size: 1.3rem;
+  font-weight: 700; /* жирный текст */
+  text-transform: uppercase;
+  color: #d63384;
+  margin-bottom: 25px;
+}
+
+.certificates {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.certificates a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificates img {
+  width: 130px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(161, 14, 36, 0.4);
+  border: 2px solid #f09b9b;
+}
+
+.certificates a:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(255, 102, 179, 0.5);
+}
+
+.certificates p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #4a0e2e;
+  font-weight: 600;
+}
+
+.certificates p strong {
+  color: #d81b60;
+}
+
+/* адаптив под телефон */
+@media (max-width: 600px) {
+  .certificates {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .certificates img {
+    width: 110px;
+    height: 75px;
+  }
+}
+
+/* ====== ПРОЕКТЫ ====== */
+.projects {
+  text-align: center;
+}
+
+.projects h2 {
+  color: #880e4f;
+  font-size: 2rem;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Контейнер для карточек */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* Каждая карточка проекта */
+.project-card {
+  background: #fff0f5;
+  border-radius: 16px;
+  padding: 25px 20px;
+  box-shadow: 0 3px 10px rgba(255, 182, 193, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  max-width: 350px;
+  width: 100%;
+  animation: fadeInUp 1.5s ease both;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+}
+
+/* Заголовки проектов */
+.project-card h3 {
+  font-size: 1.3rem;
+  color: #d81b60;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Описание проекта */
+.project-card p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Кнопка GitHub */
+.github-button {
+  display: inline-block;
+  background: #d63384;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 25px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.github-button:hover {
+  background: #f06292;
+  transform: scale(1.05);
+}
+
+/* Анимация появления карточек */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== АДАПТИВ ====== */
+@media (max-width: 768px) {
+  .project-card {
+    text-align: center;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
+  .github-button {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  background: #f8bbd0;
+  color: #4a0e2e;
+  padding: 30px 20px;
+  margin-top: 60px;
+  box-shadow: 0 -2px 10px rgba(255, 182, 193, 0.3);
+}
+
+.footer a {
+  color: #d81b60;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ====== АНИМАЦИИ ====== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== ДОП. ЭФФЕКТЫ ====== */
+.fade-in {
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.intro-text {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  text-align: left;
+  line-height: 1.6;
+}
+ 
+/* ====== НАВЫКИ И ОБРАЗОВАНИЕ ====== */
+#skills h2,
+.education h2,
+#education h2 {
+  font-size: 2.8rem; /* раньше было 1.8rem — теперь крупнее */
+  color: #880e4f;
+  margin-bottom: 25px;
+  border-left: 6px solid #f48fb1;
+  padding-left: 12px;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#skills p,
+.education p,
+#education p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+
+
+/* ====== АДАПТИВ ====== */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
